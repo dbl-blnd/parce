@@ -1,6 +1,10 @@
 # Probabilistic and Reconstruction-based Competency Estimation (PaRCE)
 
-This is the codebase for the paper titled "PaRCE: Probabilisitc and Reconstruction-based Competency Estimation for CNN-based Image Classification," which was submitted to the 2025 IEEE / CVF Computer Vision and Pattern Recognition Conference (CVPR). This README describes how to reproduce the results achieved in this paper. Note that most of the steps listed here can be skipped by downloading the saved datasets ([lunar](https://zenodo.org/records/14115095?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijc3MjI1ODFkLTk3YzMtNDdmNy05ZWI4LWUwZmZlZWQ2NGExNCIsImRhdGEiOnt9LCJyYW5kb20iOiJkNTgwYWFiMDIyNzEyYmU3NDQyMTkyYTEzYTU2MjkyNSJ9._h_DK4ruBejJQzXykYj7maeGYsww0tCyMB6X7YFBptqFISYtwrNBG8S7MhtUPDpLoGglv2m00Kxk1I0fAQ7PRw), [speed](https://zenodo.org/records/14116705?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVjNTY0YmRhLTQzY2ItNDMzMC1iNTY4LWQ5MzRlMjNlMjhkNyIsImRhdGEiOnt9LCJyYW5kb20iOiI2NWY4MDNlOWFjNWYxZmQ5ODg2YjA1YWM3ODE3NmM3OCJ9.QgIH6XwFdt8YfOGyXJxtpdV27y-rpviI1dy_TJFcU7hpVv8Z8aKr6aOpno6gjtWrAnErvnA96dEkZrO91xkb6g), [pavilion](https://zenodo.org/records/14117470?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjRlMmUxMjQ1LWE0NjQtNDg3NC1iZmMyLTQwMjIzNWY3NmQ4ZCIsImRhdGEiOnt9LCJyYW5kb20iOiI0YjM2MTA4ZDNkM2MyNjQ3M2E1YmU0MDIwYThiNjU3ZCJ9.ujBXqHToAs1Hcaz9K0Mk2VXzm1lY6RixqWoaXj6UtH3FLlooAzRnCucHY1_VgJD5YPAT7DPYlwn44uhbBhlppQ)) and trained models ([lunar](https://zenodo.org/records/14117660?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjQ0ZjA3Yjc3LTkyOTEtNDU0Yi05YjkzLWU0M2JkZjUxYTEyZSIsImRhdGEiOnt9LCJyYW5kb20iOiIxMTYwOTY0NmEzY2UyOWE2MTUxMGMxNzIyNDliNzhmYiJ9.AEOqTQwzStDNwMVXWAiImxCXGvuOy3CNmgWoEGW3rlA7uSsSd2wFNkYrc4flVHDvcmrKLimaURupmd26DzaZPA), [speed](https://zenodo.org/records/14117780?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjlhNGQ1ZmZhLWU4YzEtNDU4OS05NGFlLTk4MDZmYzY0ODZiNSIsImRhdGEiOnt9LCJyYW5kb20iOiJjZGFmMTA3MTA0YTFjODQ4ZjAxYTM0MTc1ZWJkMmRkMSJ9.T_jsMnKIgQOKSxsfluK9Qmo3L6jBHpS-KtiLV8SoFTMbUngVpoEF-BwkXyHD_wOZeiN-zr1h3fURQobbmD8kMA), [pavilion](https://zenodo.org/records/14117974?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImUyNGM4YThhLTM2YjktNDY3Mi1iMjJmLTBlZTJlZmVhNWM1NyIsImRhdGEiOnt9LCJyYW5kb20iOiJmY2ViYjA0NGQ2Y2NmZDc4MmY5MTkyMzU0OGRkMmVkMiJ9.KoR-d-bJKfyRW0bEyEC5bdrmKwCfyHGEKDtFnbQx-QTBON_AV7_hQ2AKFnkflyWpqOiRkBb8-mWzjvsMYbROfQ)) provided through Zenodo.
+This is the codebase for the paper titled "PaRCE: Probabilistic and Reconstruction-based Competency Estimation for Image Classification," which was submitted to the 34th International Conference on Artificial Neural Networks (ICANN). This README describes how to reproduce the results achieved in this paper. Note that most of the steps listed here can be skipped by downloading the saved datasets ([lunar](https://zenodo.org/records/14115095?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6Ijc3MjI1ODFkLTk3YzMtNDdmNy05ZWI4LWUwZmZlZWQ2NGExNCIsImRhdGEiOnt9LCJyYW5kb20iOiJkNTgwYWFiMDIyNzEyYmU3NDQyMTkyYTEzYTU2MjkyNSJ9._h_DK4ruBejJQzXykYj7maeGYsww0tCyMB6X7YFBptqFISYtwrNBG8S7MhtUPDpLoGglv2m00Kxk1I0fAQ7PRw), [speed](https://zenodo.org/records/14116705?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjVjNTY0YmRhLTQzY2ItNDMzMC1iNTY4LWQ5MzRlMjNlMjhkNyIsImRhdGEiOnt9LCJyYW5kb20iOiI2NWY4MDNlOWFjNWYxZmQ5ODg2YjA1YWM3ODE3NmM3OCJ9.QgIH6XwFdt8YfOGyXJxtpdV27y-rpviI1dy_TJFcU7hpVv8Z8aKr6aOpno6gjtWrAnErvnA96dEkZrO91xkb6g), [pavilion](https://zenodo.org/records/14117470?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjRlMmUxMjQ1LWE0NjQtNDg3NC1iZmMyLTQwMjIzNWY3NmQ4ZCIsImRhdGEiOnt9LCJyYW5kb20iOiI0YjM2MTA4ZDNkM2MyNjQ3M2E1YmU0MDIwYThiNjU3ZCJ9.ujBXqHToAs1Hcaz9K0Mk2VXzm1lY6RixqWoaXj6UtH3FLlooAzRnCucHY1_VgJD5YPAT7DPYlwn44uhbBhlppQ)) and trained models ([lunar](https://zenodo.org/records/14117660?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjQ0ZjA3Yjc3LTkyOTEtNDU0Yi05YjkzLWU0M2JkZjUxYTEyZSIsImRhdGEiOnt9LCJyYW5kb20iOiIxMTYwOTY0NmEzY2UyOWE2MTUxMGMxNzIyNDliNzhmYiJ9.AEOqTQwzStDNwMVXWAiImxCXGvuOy3CNmgWoEGW3rlA7uSsSd2wFNkYrc4flVHDvcmrKLimaURupmd26DzaZPA), [speed](https://zenodo.org/records/14117780?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjlhNGQ1ZmZhLWU4YzEtNDU4OS05NGFlLTk4MDZmYzY0ODZiNSIsImRhdGEiOnt9LCJyYW5kb20iOiJjZGFmMTA3MTA0YTFjODQ4ZjAxYTM0MTc1ZWJkMmRkMSJ9.T_jsMnKIgQOKSxsfluK9Qmo3L6jBHpS-KtiLV8SoFTMbUngVpoEF-BwkXyHD_wOZeiN-zr1h3fURQobbmD8kMA), [pavilion](https://zenodo.org/records/14117974?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6ImUyNGM4YThhLTM2YjktNDY3Mi1iMjJmLTBlZTJlZmVhNWM1NyIsImRhdGEiOnt9LCJyYW5kb20iOiJmY2ViYjA0NGQ2Y2NmZDc4MmY5MTkyMzU0OGRkMmVkMiJ9.KoR-d-bJKfyRW0bEyEC5bdrmKwCfyHGEKDtFnbQx-QTBON_AV7_hQ2AKFnkflyWpqOiRkBb8-mWzjvsMYbROfQ)) provided through Zenodo. Details about these datasets and models are also provided in the corresponding Zenodo repositories. Figures displaying the datasets are provided below.
+
+![Lunar Dataset](https://github.com/dbl-blnd/parce/blob/main/figs/data-lunar.png)
+![Speed Dataset](https://github.com/dbl-blnd/parce/blob/main/figs/data-speed.png)
+![Park Dataset](https://github.com/dbl-blnd/parce/blob/main/figs/data-park.png)
 
 ## 0) Set Up Codebase
 
@@ -213,6 +217,11 @@ python src/comparison/overall/compare.py --data_dir results/<dataset>/unmodified
 
 You should specify the `data_dir` where your evaluations were saved in the previous step and the `plot_dir`, where you want the generated plots to be saved. This command will pull all of the CSV files from the given folder, read the results, calculate a number of performance metrics for each method, print a table comparing the methods to the terminal, and save the same table to a CSV file. It will also save figures of the score distributions for each method to the provided folder, along with ROC curves.
 
+Below are the score distributions we collected for each of the provided datasets.
+![Lunar OOD Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/ood-box-lunar.png)
+![Speed OOD Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/ood-box-speed.png)
+![Park OOD Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/ood-box-park.png)
+
 ### 4d. Evaluate competency methods across image properties
 
 You can change various images properties of the in-distribution validation set and evaluate the impact on prediction accuracy and competency estimates using the `evaluate` script in the analysis folder:
@@ -240,6 +249,11 @@ python src/analysis/compare.py --data_dir results/<dataset>/modified/data/ --plo
 ```
 
 You should specify the `data_dir`, where your evaluations were saved in the previous step and the `plot_dir`, where you want the generated plots to be saved. This command will pull all of the pickle files from the given folder, read the results, calculate a number of performance metrics for each method, print a table comparing the methods to the terminal and save the same table to a CSV file. It will also save figures of the score distributions for each method to the provided folder, along with ROC curves.
+
+Below are the score distributions we collected for each of the provided datasets.
+![Lunar Modified Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/mod-box-lunar.png)
+![Speed Modified Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/mod-box-speed.png)
+![Park Modified Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/mod-box-park.png)
 
 ## 5) Design Regional Competency Estimator
 
@@ -345,6 +359,11 @@ python src/comparison/regional/compare.py --data_dir results/<dataset>/regional/
 
 You should specify the `data_dir` where your evaluations were saved in the previous step and the `plot_dir`, where you want the generated plots to be saved. You should also provide the `decoder_dir`, where the OOD segment labels were saved, along with the `height` and `width` of the competency images (if they are not the default size). This command will pull all of the CSV files from the given folder, read the results, calculate a number of performance metrics for each method, print a table comparing the methods to the terminal, and save the same table to a CSV file. It will also save figures of the score distributions for each method to the provided folder, along with ROC curves.
 
+Below are the score distributions we collected for each of the provided datasets.
+![Lunar Anomalous Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/anom-box-lunar.png)
+![Speed Anomalous Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/anom-box-speed.png)
+![Park Anomalous Box Plots](https://github.com/dbl-blnd/parce/blob/main/figs/anom-box-park.png)
+
 ### 6c. Visualize competency methods for manually collected data
 
 You can also visualize the competency maps for each evaluated method using the visualize script:
@@ -353,3 +372,8 @@ python src/comparison/regional/visualize.py --test_data <dataset> results/<datas
 ```
 
 You should specify the dataset you're working with, the folder where all of the evaluation files are stored, the folder where visualizations of the compentency maps will be saved, and the example image of interest from the given dataset. This command will pull all of the data files from the given folder, visualize the generated competency maps for the selected example, and save the figures to the folder specified by save_dir.
+
+Below are some example competency maps we collected for each of the provided datasets.
+![Lunar Anomalous Competency Maps](https://github.com/dbl-blnd/parce/blob/main/figs/anom-vis-lunar.png)
+![Speed Anomalous Competency Maps](https://github.com/dbl-blnd/parce/blob/main/figs/anom-vis-speed.png)
+![Park Anomalous Competency Maps](https://github.com/dbl-blnd/parce/blob/main/figs/anom-vis-park.png)
